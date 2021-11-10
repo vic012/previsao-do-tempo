@@ -28,7 +28,7 @@
 		<div class="colunaEsquerda">
 			<div class="card">
 				<!------------------ Tabela -->
-	        	<h4>Hoje: {{data}}, Você está em {{cidade}}?</h4>
+				<h5>A previsão para os próximos dias em {{cidade}} é</h5>
 	    		<table>
 	    			<tr>
 	    				<th>Data</th>
@@ -48,6 +48,7 @@
 	        			</tr>
 		        	{% endfor %}
 	    		</table>
+	        	<h6>Consulta realizada em: {{data}}</h6>
         	</div>
         </div>
         <div class="colunaDireita">
