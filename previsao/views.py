@@ -6,8 +6,13 @@ class Index(View):
 	template_name = 'index.html'
 
 	def get(self, request):
-		#acessa a API
-		api = Prev()
+		return render(request, self.template_name)
+
+	def post(self, request):
+		cidade_user = request.POST['cidade'].title()
+		uf = request.POST['estado'].upper()
+		localidade = f'{cidade_user}, {uf}'
+		api = Prev(localidade)
 		#Acessa os dados da API
 		api.dados()
 		#Recebe os dodos individuais
@@ -26,7 +31,7 @@ class Index(View):
 			'cidade': cidade,
 			'dados': resultado
 		}
-		print(contexto)
+		
 		return render(request, self.template_name, contexto)
 
 class Teste(View):

@@ -27,28 +27,44 @@
 	<div class="linha">
 		<div class="colunaEsquerda">
 			<div class="card">
+				<form action="/" method="post">
+					{% csrf_token %}
+					<label>Cidade</label><br>
+					<input type="text" name="cidade" placeholder="São Paulo"><br>
+					<label>UF</label><br>
+					<input type="text" name="estado" placeholder="SP">
+					<br>
+					<br>
+					<div>
+						<input type="submit" value="Ver a previsão" class="button">	
+					</div>
+				</form>
 				<!------------------ Tabela -->
-				<h5>A previsão para os próximos dias em {{cidade}} é</h5>
-	    		<table>
-	    			<tr>
-	    				<th>Data</th>
-	    				<th>Dia</th>
-	    				<th>Temperatura Máxima</th>
-	    				<th>Temperatura Mínima</th>
-	    				<th>Condição</th>
+				{% if not dados %}
+					<h1></h1>
+				{% else %}
+					<h5>A previsão para os próximos dias em {{cidade}} é</h5>
+		    		<table>
+		    			<tr>
+		    				<th>Data</th>
+		    				<th>Dia</th>
+		    				<th>Temperatura Máxima</th>
+		    				<th>Temperatura Mínima</th>
+		    				<th>Condição</th>
 
-	    			</tr>
-	    			{% for item in dados %}
-	        			<tr>
-	        				<td>{{item.date}}</td>
-		        			<td>{{item.weekday}}</td>
-		        			<td>{{item.max}} ºC</td>
-		        			<td>{{item.min}} ºC</td>
-		        			<td>{{item.description}}</td>
-	        			</tr>
-		        	{% endfor %}
-	    		</table>
+		    			</tr>
+		    			{% for item in dados %}
+		        			<tr>
+		        				<td>{{item.date}}</td>
+			        			<td>{{item.weekday}}</td>
+			        			<td>{{item.max}} ºC</td>
+			        			<td>{{item.min}} ºC</td>
+			        			<td>{{item.description}}</td>
+		        			</tr>
+			        	{% endfor %}
+		    		</table>
 	        	<h6>Consulta realizada em: {{data}}</h6>
+		    	{% endif %}
         	</div>
         </div>
         <div class="colunaDireita">
