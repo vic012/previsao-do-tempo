@@ -1,0 +1,76 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Prever</title>
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+	<link rel="stylesheet" type="text/css" href="{% static 'css/style.css' %}">
+</head>
+<body>
+	<!-- ---------------- Cabeçalho, Navbar -->
+	<div class="cabecalho">
+		<div class="navbar">
+			<a class="active" href="/"><i class="fa fa-fw fa-home"></i> Inicio</a>
+			<a href="https://pedro.pythonanywhere.com" target="_blank"><i class="fa fa-address-card-o" aria-hidden="true"></i> Sobre</a>
+		</div>
+		<div class="titulo">
+			<h1 class='victech'>PREVER</h1>
+			<p>Veja aqui como será o tempo da semana!</p>
+		</div>
+	</div>
+
+	<!------------------ Dados -->
+
+	<!------------------ Filtro -->
+	<div class="linha">
+		<div class="colunaEsquerda">
+			<div class="card">
+				<!------------------ Tabela -->
+	        	<h4>Hoje: {{data}}, Você está em {{cidade}}?</h4>
+	    		<table>
+	    			<tr>
+	    				<th>Data</th>
+	    				<th>Dia</th>
+	    				<th>Temperatura Máxima</th>
+	    				<th>Temperatura Mínima</th>
+	    				<th>Condição</th>
+
+	    			</tr>
+	    			{% for item in dados %}
+	        			<tr>
+	        				<td>{{item.date}}</td>
+		        			<td>{{item.weekday}}</td>
+		        			<td>{{item.max}} ºC</td>
+		        			<td>{{item.min}} ºC</td>
+		        			<td>{{item.description}}</td>
+	        			</tr>
+		        	{% endfor %}
+	    		</table>
+        	</div>
+        </div>
+        <div class="colunaDireita">
+			<div class="card">
+				<h2>O que é?</h2>
+				<p>
+					O Prever é um APP que disponibiliza dados atualizados de previsão do tempo de uma determinada região do Brasil, o nosso
+					serviço se baseia no consumo da API	HG Weather, assim, conseguimos uma apresentação rápida e atualizada.
+				</p>
+				<h2>Como usar?</h2>
+				<p>
+					Assim que você entra no site a API consulta os dados de geolocalização pelo seu endereço de IP, ou seja, todo o processo
+					É automático, sem a necessidade de preencher algum formulário
+				</p>
+			</div>			
+		</div>
+	</div>
+
+	<!-- ---------------- Rodapé -->
+	<footer>
+		<a href="https://pedro.pythonanywhere.com" target="_blank">
+  			<p class="rodape">© Pedro Henrique Vicente de Sousa</p>
+  		</a>
+	</footer>
+</body>
+</html>

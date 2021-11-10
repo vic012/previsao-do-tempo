@@ -1,0 +1,6 @@
+<form action="{% url 'post_detalhe' posts.pk %}" method="post">
+					{% csrf_token %}
+					
+					<p><a href="https://pedro.pythonanywhere.com">Pedro Henrique</a></p>
+					<input type="submit" value="Ler mais" class="button">	
+				</form>
