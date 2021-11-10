@@ -8,7 +8,7 @@ class Prev:
 		#Link da API
 		self._api = 'https://api.hgbrasil.com/weather?'
 		#Chave de acesso a API
-		self._key = 'f21d6ed6'
+		self._key = '08121454'
 		#Recebe o resultado
 		self._resultado = {}
 		
