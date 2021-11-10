@@ -1,4 +1,4 @@
-# Previsão do tempo com base no endereço de IP
+# Previsão do tempo com base no endereço
 
 ## [Prever](https://prever.herokuapp.com/)
 
@@ -15,3 +15,6 @@
 
 ### Ferramenta para Deploy do projeto
 - Heroku (Free)
+
+## Como funciona?
+- Ao acessar o site, você deve informar a cidade e o estado que deseja consultar a previsão
