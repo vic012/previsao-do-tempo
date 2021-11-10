@@ -6,13 +6,15 @@ class Prev:
 		#Link da API
 		self._api = 'https://api.hgbrasil.com/weather?'
 		#Chave de acesso a API
-		self._key = '5b3e8738'
+		self._key = '1eff744c'
 		#Recebe o resultado
 		self._resultado = {}
 		
 	def dados(self):
+		#Acessando o IP do usuário
+		ip = requests.get('https://api.ipify.org/')
 		#Acessa os dados em Json da API
-		dados = requests.get(f'{self._api}fields=only_results,city_name,forecast,date,weekday,max,min,description&key={self._key}&user_ip=remote')
+		dados = requests.get(f'{self._api}fields=only_results,city_name,forecast,date,weekday,max,min,description&key={self._key}&user_ip={ip}')
 		#Se a API for acessada com sucesso
 		if (dados.status_code == 200):
 			self._resultado = dados.json()

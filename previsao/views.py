@@ -28,3 +28,12 @@ class Index(View):
 		}
 		print(contexto)
 		return render(request, self.template_name, contexto)
+
+class Teste(View):
+	template_name = 'teste.html'
+
+	def get(self, request):
+		contexto = {
+			'dados': request.META.get('REMOTE_ADDR')
+		}
+		return render(request, self.template_name, contexto)
