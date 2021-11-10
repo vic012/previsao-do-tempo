@@ -1,17 +1,17 @@
-#Previsão do tempo com base no endereço de IP
+# Previsão do tempo com base no endereço de IP
 
-##[Prever](https://prever.herokuapp.com/)
+## [Prever](https://prever.herokuapp.com/)
 
-##Esse APP consome a API de previsão de tempodo HG Weather
+## Esse APP consome a API de previsão de tempodo HG Weather
 
-#Ferramentas usadas no projeto
+# Ferramentas usadas no projeto
 
-###Linguagem de programação
+### Linguagem de programação
 - Python 3.9.5
-###Framework
+### Framework
 - Django 3.2.9
-###Biblioteca
+### Biblioteca
 - [Requests](https://docs.python-requests.org/en/latest/)
 
-#Ferramenta para Deploy do projeto
+### Ferramenta para Deploy do projeto
 - Heroku (Free)
